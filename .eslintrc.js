@@ -33,6 +33,22 @@ module.exports = {
 		'semi': [
 			'error',
 			'always'
+		],
+		"no-tabs": 0,
+		"max-len": [ "error", { "code": 100, "comments": 100, "tabWidth": 4 } ],
+		"arrow-parens": [ "error", "as-needed" ],
+		"comma-dangle": [ "error", "never" ],
+		"object-curly-spacing": [
+			"error",
+			"always"
+		],
+		"space-in-parens": [
+			"error",
+			"always"
+		],
+		"array-bracket-spacing": [
+			"error",
+			"always"
 		]
 	}
 };
