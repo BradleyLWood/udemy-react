@@ -3,6 +3,8 @@ import './App.css';
 import classes from './App.module.css';
 import Person from './Person/Person';
 
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+
 class App extends Component {
 	state = {
 		persons: [
@@ -49,13 +51,14 @@ class App extends Component {
 			persons = (
 				<div>
 					{ this.state.persons.map( ( p, index ) => {
-						return <Person 
-							key={ p.id }
-							click={ this.deletePersonHandler.bind( this, index ) }
-							name={ p.name }
-							age={ p.age }
-							changed={ this.nameChangedHandler.bind( this, p.id ) }
-						/>
+						return <ErrorBoundary key={ p.id } >
+							<Person 
+								click={ this.deletePersonHandler.bind( this, index ) }
+								name={ p.name }
+								age={ p.age }
+								changed={ this.nameChangedHandler.bind( this, p.id ) }
+								/>
+							</ErrorBoundary>
 					})}
 				</div>
 			);
